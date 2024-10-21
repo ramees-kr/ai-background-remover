@@ -21,5 +21,5 @@ COPY . .
 # Expose the server port
 EXPOSE 8080
 
-# Calculate the number of worker processes based on the number of CPU cores
-CMD ["sh", "-c", "gunicorn -b 0.0.0.0:8080 --workers $(($(nproc --all) * 2 + 1)) app:app"]
+# Start the Flask app
+CMD ["flask", "run", "--host=0.0.0.0"] 
