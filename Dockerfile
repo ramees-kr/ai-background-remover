@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
+COPY u2net.onnx /home/.u2net/u2net.onnx 
+
 # Working directory
 WORKDIR /app
 
