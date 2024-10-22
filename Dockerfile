@@ -1,10 +1,4 @@
-FROM python:3.9-slim
-
-# Install build dependencies and curl
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+FROM python:3.9
 
 COPY u2net.onnx /home/.u2net/u2net.onnx 
 
@@ -21,5 +15,4 @@ COPY . .
 # Expose the server port
 EXPOSE 8080
 
-# Start the Flask app
-CMD ["flask", "run", "--host=0.0.0.0"] 
+CMD ["python", "app.py"]

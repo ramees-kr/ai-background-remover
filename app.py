@@ -73,5 +73,4 @@ def get_processed_image(filename):
     return send_file(os.path.join(PROCESSED_FOLDER, filename))
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000)) # Get the port from the environment, or use 5000 as the default
-    app.run(host='0.0.0.0', port=port) # Run the app on the specified port
+    app.run(host='0.0.0.0', debug=True, port=5100)
